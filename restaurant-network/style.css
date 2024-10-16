@@ -1,0 +1,282 @@
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.container {
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    background-image: url('images/IMG_7298.PNG');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: 400px 0;
+    position: relative;
+    animation: fadeIn 4s;
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.title, .subtitle {
+    position: relative;
+    z-index: 2;
+}
+
+.title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    color: #bbb;
+}
+
+/* Intro Section */
+.intro-section {
+    background-color: transparent;
+    padding: 50px 0;
+    text-align: center;
+    color: white;
+    animation: slideUp 1.5s ease-out;
+}
+
+.intro-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+}
+.intro-image {
+    margin-top: 20px;
+}
+
+.intro-image img {
+    width: 100%;
+    max-width: 700px;
+    justify-content: center;
+    height: auto;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Menu Links 
+.menu-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+.menu-button {
+    padding: 10px 20px;
+    background-color: #ddd;
+    color: #000;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.menu-button:hover {
+    background-color: #bbb;
+    transform: translateY(-5px);
+}  */
+/* Центрирование и уменьшение размера изображения в news-section */
+.news-section {
+    text-align: center; /* Центрирует содержимое внутри секции */
+    padding: 20px 0; /* Добавляет отступы сверху и снизу */
+}
+
+.news-image-wrapper {
+    display: flex;
+    justify-content: center; /* Центрирует изображение по горизонтали */
+}
+
+.news-image {
+    width: 100%; /* Уменьшает изображение до 50% ширины контейнера */
+    max-width: 600px; /* Ограничивает максимальную ширину изображения */
+    height: auto; /* Сохраняет пропорции изображения */
+    margin-top: 40px; /* Отступ сверху для разделения от заголовка */
+    border-radius: 10px; /* Закругленные углы изображения */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Добавляет тень для эффекта */
+}
+
+/* Restaurant List */
+.restaurants {
+    padding: 50px 0;
+    background-color: transparent;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #fefafa;
+}
+
+.restaurant-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+    align-items: center;
+}
+
+.restaurant-link {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: #111;
+    padding: 10px 20px;
+    border: 2px solid #111;
+    transition: all 0.3s ease;
+}
+
+.restaurant-link:hover {
+    background-color: #111;
+    color: white;
+}
+
+/* Footer */
+.footer {
+    background-color: transparent;
+    color: #f5f4f4;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Social Links */
+.social-link {
+    color: #f8f6f6;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+    0% { transform: translateY(50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Начальное состояние - скрыто 
+.scroll-fade {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Видимое состояние 
+.scroll-fade.visible {
+    opacity: 1;
+    transform: translateY(0);
+} *
+
+/* Restaurant Cards */
+.restaurant-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px 0;
+    background-color: transparent;
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease;
+}
+
+.card-link {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .card-link {
+    opacity: 1;
+}
+
+
+.scroll-fade {
+    opacity: 0;
+    transform: translateY(20px); /* Начальное состояние - немного ниже и невидим */
+    transition: opacity 4s ease-out, transform 1s ease-out;
+}
+
+.scroll-fade.visible {
+    opacity: 1;
+    transform: translateY(0); /* Возвращение в исходное положение */
+}
